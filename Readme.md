@@ -60,10 +60,13 @@ To make master ready :
 
 Installing a CNI Network.
 sudo su -
+
 sysctl net.bridge.bridge-nf-call-iptables=1
+
 export kubever=$(kubectl version | base64 | tr -d '\n')
+
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
-exit
+
 kubectl get nodes
 
 ##install worker nodes, the first node
